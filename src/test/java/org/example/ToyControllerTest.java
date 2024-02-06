@@ -25,7 +25,6 @@ public class ToyControllerTest {
     @AfterEach
     public void tearDown() {
         System.setOut(System.out);
-        System.setErr(System.err);
     }
 
     @Test
@@ -68,21 +67,18 @@ public class ToyControllerTest {
 
     @Test
     public void testProcessCommand_InvalidCommand() {
-        System.setErr(new PrintStream(outputStreamCaptor));
         toyController.processCommand("Run run run");
         assertEquals(INVALID_COMMAND + "\n", outputStreamCaptor.toString());
     }
 
     @Test
     public void testProcessCommand_InvalidPlaceCommand() {
-        System.setErr(new PrintStream(outputStreamCaptor));
         toyController.processCommand("PLACE a,b,c");
         assertEquals(INVALID_COMMAND + "\n", outputStreamCaptor.toString());
     }
 
     @Test
     public void testProcessCommand_InvalidPlaceCommandAfterPlaced() {
-        System.setErr(new PrintStream(outputStreamCaptor));
         toyController.processCommand("PLACE 0,0,NORTH");
         toyController.processCommand("Run");
         assertEquals(INVALID_COMMAND + "\n", outputStreamCaptor.toString());
@@ -90,14 +86,12 @@ public class ToyControllerTest {
 
     @Test
     public void testProcessCommand_UnplacedMoveCommand() {
-        System.setErr(new PrintStream(outputStreamCaptor));
         toyController.processCommand("MOVE");
         assertEquals(INVALID_COMMAND + "\n", outputStreamCaptor.toString());
     }
 
     @Test
     public void testProcessCommand_EmptyCommand() {
-        System.setErr(new PrintStream(outputStreamCaptor));
         toyController.processCommand("");
         assertEquals(INVALID_COMMAND + "\n", outputStreamCaptor.toString());
     }

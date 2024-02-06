@@ -18,7 +18,7 @@ public class ToyController {
                 String[] details = placeValue.split(PLACE_SPLIT);
                 toy.place(Integer.parseInt(details[0]), Integer.parseInt(details[1]), details[2]);
             } else {
-                System.err.println(INVALID_COMMAND);
+                System.out.println(INVALID_COMMAND);
             }
         } else {
             if (toy.getIsPlaced()) {
@@ -28,11 +28,11 @@ public class ToyController {
                     case "RIGHT": toy.toRight(); break;
                     case "REPORT": toy.report(); break;
                     default:
-                        System.err.println(INVALID_COMMAND);
+                        System.out.println(INVALID_COMMAND);
                         break;
                 }
             } else {
-                System.err.println(INVALID_COMMAND);
+                System.out.println(INVALID_COMMAND);
             }
         }
     }
