@@ -18,7 +18,7 @@ This project is a Java application that simulates a toy moving on a grid. The to
 To install this project, you need to have Java installed on your machine. Clone the repository and navigate to the project directory.
 
 ```bash
-git clone https://github.com/your-username/your-java-project.git
+git clone https://github.com/KanoknartMeen/toy-robot.git
 cd toy-robot
 mvn clean install
 ````
