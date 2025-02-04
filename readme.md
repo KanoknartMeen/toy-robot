@@ -49,4 +49,4 @@ mvn test
 mvn test -Dtest="ToyControllerTest" 
 ```
 
-To get you code coverage report navigate to the target > site > jacoco > index.html
+To get the code coverage report navigate to the target > site > jacoco > index.html
